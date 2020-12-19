@@ -1,5 +1,5 @@
 server:
-  port: 3355
+  port: 3366
 
 spring:
   application:
@@ -10,8 +10,8 @@ spring:
       label: master #分支名称
       name: config #配置文件名称
       profile: dev #读取后缀名称 上述3个综合：master分支上config-dev.yml的配置文件被读取
-      uri: http://localhost:3344 #配置中心地址
-#rabbitmq相关配置15672是web管理界面的端口；5672是MQ访问的端口
+        uri: http://localhost:3344 #配置中心地址
+  #rabbitmq相关配置15672是web管理界面的端口；5672是MQ访问的端口
   rabbitmq:
     host: loacalhost
     port: 5672
@@ -22,12 +22,12 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
-#服务注册到eureka地址
+  #服务注册到eureka地址
 
 
 management:
   endpoints:
     web:
       exposure:
-        include: "*" # "refresh"
-#暴露监控端点
+        include: "*"
+  #暴露监控端点
