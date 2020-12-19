@@ -1,5 +1,6 @@
 package com.cjw.springcloud.controller;
 
+import com.cjw.myrule.MySelfRule;
 import com.cjw.springcloud.entities.CommonResult;
 import com.cjw.springcloud.entities.Payment;
 import com.cjw.springcloud.lb.LoadBalancer;
@@ -7,6 +8,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClients;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,9 +23,14 @@ import java.util.List;
 /**
  * @author 西楚霸王
  * @date 2020/12/14 21:10
+ * 配置Ribbon的负载均衡策略 name
+ * name：设置 服务提供方的 应用名称
+ * configuration：设置负载均衡的Bean
  */
 @RestController
 @Slf4j
+//@RibbonClient(name = "user-server",configuration = MySelfRule.class)
+//@RibbonClients
 public class OrderController {
 
     //private static final String PAUMENT_URL = "http://localhost:8001";
