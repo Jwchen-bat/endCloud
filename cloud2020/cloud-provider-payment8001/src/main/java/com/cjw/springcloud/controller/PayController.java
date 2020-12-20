@@ -89,4 +89,9 @@ public class PayController {
 
         return serverPort;
     }
+
+    @GetMapping("payment/zipkin")
+    public String paymentZipkin(){
+        return "分布式链路追踪";
+    }
 }
